@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import { Link } from 'react-router-dom'
 function Product() {
     const [state,setState] = useState(JSON.parse(localStorage.getItem("data"))||[])
 
@@ -20,10 +20,10 @@ function Product() {
         {
             state.map((el)=>{
                 return <>
-                     <img src={el.img} alt={el.title}/>
+                     <img src={el.img} alt={el.title} width={100}/>
                      <p>{el.title} - {el.des}</p>
                      <button onClick={()=>handleDelete(el.id)}>Delete</button>
-                     <button>Edit</button><br />
+                     <Link to={`/product/edit/${el.id}`}><button>Edit</button></Link><br />
                 </>
             })
         }
