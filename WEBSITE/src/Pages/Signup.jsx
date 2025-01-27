@@ -16,7 +16,7 @@ function Signup() {
     }
     const handleSubmit = (e)=>{
         e.preventDefault()
-        axios.post(`http://localhost:8080/users`,state)
+        axios.post(`https://website-53tn.onrender.com/users`,state)
         .then((Res)=>{
             alert("User Registered Succesfully")
             navigate("/login")
