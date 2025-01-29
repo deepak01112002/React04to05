@@ -9,15 +9,22 @@ import Form from '../Pages/Form'
 import PageNotFound from '../Pages/PageNotFound'
 import Login from '../Pages/Login'
 import Signup from '../Pages/Signup'
+import PrivateRoute from '../Components/PrivateRoute'
 
 function MainRoutes() {
   return (
     <div>
         <Routes>
             <Route path='/' element={<Home/>}></Route>
-            <Route path='/men' element={<Men/>}></Route>
+            <Route path='/men' element={
+            <PrivateRoute>
+              <Men/>
+            </PrivateRoute>    
+              }></Route>
             <Route path='/women' element={<Women/>}></Route>
-            <Route path='/product/:id' element={<SingleProduct/>}></Route>
+            <Route path='/product/:id' element={
+            <PrivateRoute> 
+              <SingleProduct/></PrivateRoute> }></Route>
             <Route path='/cart' element={<Cart/>}></Route>
             <Route path='/form' element={<Form/>}></Route>
             <Route path='/login' element={<Login/>}></Route>

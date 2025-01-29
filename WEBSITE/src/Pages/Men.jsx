@@ -19,6 +19,7 @@ function Men() {
   const handleRedirect = (id)=>{
      navigate(`/product/${id}`)
   }
+  
   return (
     <div style={{display : "grid", gridTemplateColumns : "repeat(3,1fr)", margin : "auto" }}>
        {
@@ -28,7 +29,7 @@ function Men() {
               <div className="card-body">
                 <h5 className="card-title">{el.title}</h5>
                 <p className="card-text">{el.description} - ₹ {el.price}</p>
-                <a className="btn btn-primary">Add To Cart</a>
+               
               </div>
             </div>
           })

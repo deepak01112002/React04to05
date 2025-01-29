@@ -22,6 +22,8 @@ function Login() {
             }else{
                 if(Res.data[0].password == state.password){
                     alert("User Logged IN")
+                    localStorage.setItem("isLoggedIn", true)
+                    localStorage.setItem("userEmail", Res.data[0].email)
                     navigate("/")
                 }else{
                     alert("Password Wrong")
